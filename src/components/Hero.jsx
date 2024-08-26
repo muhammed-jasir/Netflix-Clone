@@ -3,10 +3,11 @@ import React from 'react'
 import hero_img from '../assets/moneyheist-banner.jpg'
 import play_icon from '../assets/icons/play_icon.png'
 import info_icon from '../assets/icons/info_icon.png'
+import MovieCards from './MovieCards'
 
 const Hero = () => {
     return (
-        <section className='relative w-full'>
+        <section className='relative w-full overflow-hidden'>
             <img
                 src={hero_img}
                 alt='hero_img'
@@ -15,7 +16,7 @@ const Hero = () => {
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-75"></div>
 
-            <div className='absolute w-full flex flex-col p-4 items-center md:items-start text-center md:text-left md:max-w-2xl md:pl-20 bottom-10 gap-7'>
+            <div className='absolute w-full flex flex-col p-4 items-center md:items-start text-center md:text-left md:max-w-2xl md:pl-20 bottom-72 gap-7'>
                 <h1 className='text-5xl font-bold'>
                     Money Heist
                 </h1>
@@ -40,6 +41,10 @@ const Hero = () => {
                         More Info
                     </button>
                 </div>
+            </div>
+
+            <div className='absolute bottom-8 max-w-full px-4 sm:px-6 md:px-8'>
+                <MovieCards title='Trending on Netflix' />
             </div>
         </section>
     )
