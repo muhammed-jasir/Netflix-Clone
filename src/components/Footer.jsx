@@ -8,7 +8,7 @@ import youtube_icon from '../assets/icons/youtube_icon.png'
 const Footer = () => {
     return (
         <footer className='flex flex-col px-5 pt-2 w-full'>
-            <div className='border-t border-b border-white flex flex-col pt-4 gap-8'>
+            <div className='flex flex-col pt-4 gap-8'>
                 <p className='hover:underline hover:underline-offset-2 cursor-pointer px-8 sm:px-10 md:px-20'>Questions? Call 000-800-919-1694</p>
                 <div className='flex flex-col gap-2 md:flex-row justify-between px-8 sm:px-10 md:px-20 pb-8'>
                     <ul className='flex flex-col gap-2'>
