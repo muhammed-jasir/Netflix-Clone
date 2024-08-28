@@ -43,8 +43,8 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className='absolute bottom-8 max-w-full px-4 sm:px-6 md:px-8'>
-                <MovieCards title='Trending on Netflix' />
+            <div className='absolute bottom-8 max-w-full px-4 sm:px-6 md:px:8'>
+                <MovieCards title={'Trending on Netflix'} />
             </div>
         </section>
     )
