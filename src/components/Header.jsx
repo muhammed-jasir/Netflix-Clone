@@ -57,18 +57,21 @@ const Header = () => {
                                 Home
                             </li>
                         </Link>
+                        <Link to='/movies'>
                         <li className='cursor-pointer px-8 md:px-0 py-2 md:py-0 hover:bg-black md:hover:bg-transparent md:hover:text-gray-400'>
                             Movies
                         </li>
+                        </Link>
+                        <Link to='/tv'>
                         <li className='cursor-pointer px-8 md:px-0 py-2 md:py-0 hover:bg-black md:hover:bg-transparent md:hover:text-gray-400 line-clamp-1'>
                             TV Shows
                         </li>
+                        </Link>
+                        <Link to='/'>
                         <li className='cursor-pointer px-8 md:px-0 py-2 md:py-0 hover:bg-black md:hover:bg-transparent md:hover:text-gray-400 line-clamp-1'>
                             My List
                         </li>
-                        <li className='cursor-pointer px-8 md:px-0 py-2 md:py-0 hover:bg-black md:hover:bg-transparent md:hover:text-gray-400 line-clamp-1'>
-                            Recently Added
-                        </li>
+                        </Link>
                     </ul>
                 </nav>
             </div>
