@@ -17,7 +17,7 @@ const TvShows = () => {
                 {TvShowGenres.map(
                     (genre, index) => (
                         <div key={index}>
-                            <MovieCards tvGenreId={genre.id} title={genre.name} />
+                            <MovieCards tvGenreId={genre.id} title={genre.name} isTvShow={true}/>
                         </div>
                     )
                 )}
