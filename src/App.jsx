@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Movies from './pages/Movies'
 import TvShows from './pages/TvShows'
 import PlayerPage from './pages/PlayerPage'
+import Spinner from './components/Spinner'
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
             <BrowserRouter>
                 <ScrollToTop />
                 <Routes>
+                    <Route path='/hi' element={<Spinner />}></Route>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<Movies />} />
                     <Route path='/tv' element={<TvShows />} />
