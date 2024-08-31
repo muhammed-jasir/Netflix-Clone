@@ -9,19 +9,21 @@ import TvShows from './pages/TvShows'
 import PlayerPage from './pages/PlayerPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import ForgotPassword from './components/ForgotPassword'
 
 const App = () => {
     return (
         <div>
             <BrowserRouter>
                 <ScrollToTop />
-                <ToastContainer theme="dark"/>
+                <ToastContainer theme="dark" newestOnTop={true} />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<Movies />} />
                     <Route path='/tv' element={<TvShows />} />
                     <Route path='/player/:type/:id' element={<PlayerPage />} />
                     <Route path='/signin' element={<SigninPage />} />
+                    <Route path='/forgot-password' element={<ForgotPassword />} />
                     <Route path='/signup' element={<SignupPage />} />
                 </Routes>
             </BrowserRouter>

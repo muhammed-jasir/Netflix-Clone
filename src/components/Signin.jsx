@@ -49,7 +49,7 @@ const Signin = () => {
 
     return (
         <div
-            className="flex flex-col items-center justify-center gap-7 min-h-screen bg-no-repeat bg-cover bg-center bg-[#191919] py-8 px-3 sm:px-5 bg-gradient-to-r from-[#0000007e] to-[#0000007e]"
+            className="pt-20 flex flex-col items-center justify-center gap-7 min-h-screen bg-no-repeat bg-cover bg-center bg-[#191919] py-8 px-3 sm:px-5 bg-gradient-to-r from-[#0000007e] to-[#0000007e]"
             style={{ backgroundImage: `url(${banner})` }}
         >
             <img
@@ -84,13 +84,18 @@ const Signin = () => {
                             onChange={handleChange}
                             value={formData.password}
                         />
-                        <p className='text-sm text-[#b3b3b3] text-right hover:underline hover:underline-offset-2'>
-                            Forgot your Password?
-                        </p>
+                        <Link to='/forgot-password'>
+                            <p className='text-sm text-[#b3b3b3] text-right hover:underline hover:underline-offset-2'>
+                                Forgot your Password?
+                            </p>
+                        </Link>
                     </div>
 
                     <div className='w-full flex flex-col gap-2'>
-                        <button className='w-full bg-[#e50914] hover:bg-[#e50914cb] p-3 text-white text-base font-semibold rounded '>
+                        <button
+                            disabled={loading}
+                            className='w-full bg-[#e50914] hover:bg-[#e50914cb] p-3 text-white text-base font-semibold rounded'
+                        >
                             {loading
                                 ? (
                                     <div className='flex items-center justify-center gap-3'>
