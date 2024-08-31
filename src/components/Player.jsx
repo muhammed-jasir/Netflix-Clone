@@ -42,7 +42,11 @@ const Player = () => {
     }, [type, id]);
 
     if (loading) {
-        return <Spinner />;
+        return (
+            <div className='min-h-screen flex items-center justify-center'>
+                <Spinner borderColor={'border-red-800'} />
+            </div>
+        )
     }
 
     return (
@@ -97,7 +101,7 @@ const Player = () => {
                         <strong>Runtime:</strong> {details && details.runtime} minutes
                     </p>
                 </div>
-                
+
                 <div className='flex flex-col gap-4 text-sm sm:text-base text-gray-300'>
                     <p>
                         <strong>Budget:</strong> ${details && details.budget?.toLocaleString()}

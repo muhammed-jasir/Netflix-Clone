@@ -87,7 +87,9 @@ const MovieCards = ({ title, url, movieGenreId, tvGenreId, isTvShow }) => {
             </h2>
             <div className='w-full px-4 sm:px-6'>
                 {loading ? (
-                    <Spinner />
+                    <div className="flex justify-center items-center w-full h-[200px]">
+                        <Spinner borderColor={'border-red-800'} />
+                    </div>
                 ) : (
                     <div
                         className='flex gap-5 items-center overflow-x-auto scrollbar-hide'
@@ -107,10 +109,11 @@ const MovieCards = ({ title, url, movieGenreId, tvGenreId, isTvShow }) => {
                             </div>
                         ))}
                     </div>
-                )}
+            )}
             </div>
         </div >
     )
 }
 
 export default MovieCards
+

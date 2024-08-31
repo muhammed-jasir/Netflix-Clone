@@ -1,27 +1,28 @@
 import React from 'react'
 import Home from './pages/Home'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Signup from './pages/Signup'
-import Signin from './pages/Signin'
+import SignupPage from './pages/SignupPage'
+import SigninPage from './pages/SigninPage'
 import ScrollToTop from './components/ScrollToTop'
 import Movies from './pages/Movies'
 import TvShows from './pages/TvShows'
 import PlayerPage from './pages/PlayerPage'
-import Spinner from './components/Spinner'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
     return (
         <div>
             <BrowserRouter>
                 <ScrollToTop />
+                <ToastContainer theme="dark"/>
                 <Routes>
-                    <Route path='/hi' element={<Spinner />}></Route>
                     <Route path='/' element={<Home />} />
                     <Route path='/movies' element={<Movies />} />
                     <Route path='/tv' element={<TvShows />} />
                     <Route path='/player/:type/:id' element={<PlayerPage />} />
-                    <Route path='/signin' element={<Signin />} />
-                    <Route path='/signup' element={<Signup />} />
+                    <Route path='/signin' element={<SigninPage />} />
+                    <Route path='/signup' element={<SignupPage />} />
                 </Routes>
             </BrowserRouter>
         </div>

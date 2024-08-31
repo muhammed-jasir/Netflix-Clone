@@ -8,11 +8,15 @@ import caret_icon from '../assets/icons/caret_icon.svg'
 import menu_icon from '../assets/icons/menu.png'
 
 import { Link } from 'react-router-dom'
+import { useUserAuthContext } from '../context/UserAuthContext'
+import { toast } from 'react-toastify'
 
 const Header = () => {
     const [navbarToggle, setNavbarToggle] = useState(false);
     const [dropdown, setDropdown] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+
+    const { user, signout } = useUserAuthContext();
 
     const headerRef = useRef();
 
@@ -20,7 +24,7 @@ const Header = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY !== 0);
         };
-        
+
         window.addEventListener('scroll', handleScroll);
 
         return (
@@ -30,6 +34,14 @@ const Header = () => {
         );
 
     }, [])
+
+    const handleSignout = async () => {
+        try {
+            await signout()
+        } catch (error) {
+            toast.error(error.message);
+        }
+    }
 
     return (
         <header
@@ -63,7 +75,7 @@ const Header = () => {
                                 TV Shows
                             </li>
                         </Link>
-                        <Link to='#'>
+                        <Link to='/'>
                             <li className='cursor-pointer px-8 md:px-0 py-2 md:py-0 hover:bg-black md:hover:bg-transparent md:hover:text-gray-400 line-clamp-1'>
                                 My List
                             </li>
@@ -87,25 +99,47 @@ const Header = () => {
                         className='cursor-pointer w-7'
                     />
                 </button>
-                <div className='relative flex gap-2.5 items-center'>
-                    <img
-                        src={profile_icon}
-                        alt='profile'
-                        className='cursor-pointer w-7 rounded'
-                        onClick={() => setDropdown(!dropdown)}
-                    />
-                    <img
-                        src={caret_icon}
-                        alt='caret'
-                        className='cursor-pointer w-4 hidden sm:block'
-                        onClick={() => setDropdown(!dropdown)}
-                    />
-                    {dropdown && (
-                        <div className='absolute top-11 right-0 w-max bg-[#191919] px-4 py-2 rounded z-10 hover:underline hover:underline-offset-4 text-[15px]'>
-                            <p className='cursor-pointer'>Sign Out</p>
+
+                {user
+                    ? (
+                        <div className='relative flex gap-2.5 items-center'>
+                            <img
+                                src={profile_icon}
+                                alt='profile'
+                                className='cursor-pointer w-7 rounded'
+                                onClick={() => setDropdown(!dropdown)}
+                            />
+                            <img
+                                src={caret_icon}
+                                alt='caret'
+                                className='cursor-pointer w-4 hidden sm:block'
+                                onClick={() => setDropdown(!dropdown)}
+                            />
+                            {dropdown && (
+                                <div className='absolute top-11 right-0 min-w-[210px] w-full bg-[#191919] px-3 py-4 rounded z-10'>
+                                    <div className='w-full'>
+                                        <p className='text-sm'>{user && user.displayName}</p>
+                                        <p className='text-sm'>{user && user.email}</p>
+                                    </div>
+                                    <hr className='my-2'/>
+                                    <button 
+                                        className='cursor-pointer hover:underline hover:underline-offset-4'
+                                        onClick={handleSignout}
+                                    >
+                                        Sign Out
+                                    </button>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
+                    ) : (
+                        <Link to='/signin' className='flex items-center'>
+                            <button className='bg-[#191919] px-2 sm:px-4 py-2 whitespace-nowrap rounded text-xs sm:text-lg font-semibold'>
+                                Sign in
+                            </button>
+                        </Link>
+                    )
+                }
+
                 <button onClick={() => setNavbarToggle(!navbarToggle)}>
                     <img
                         src={menu_icon}
@@ -114,7 +148,7 @@ const Header = () => {
                     />
                 </button>
             </div>
-        </header>
+        </header >
     )
 }
 

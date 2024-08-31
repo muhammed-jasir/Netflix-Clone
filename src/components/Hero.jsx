@@ -66,7 +66,11 @@ const Hero = () => {
     }, [])
 
     if (loading) {
-        return <Spinner />
+        return (
+            <div className='w-full h-[780px] md:h-[800px] lg:h-[850px] flex items-center justify-center'>
+                <Spinner borderColor={'border-red-800'}/>
+            </div>
+        )
     }
 
     return (
