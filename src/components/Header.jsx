@@ -85,13 +85,16 @@ const Header = () => {
             </div>
 
             <div className='flex gap-5 items-center'>
-                <button>
-                    <img
-                        src={search_icon}
-                        alt='search'
-                        className='cursor-pointer w-7'
-                    />
-                </button>
+                <Link to='/search'>
+                    <button>
+                        <img
+                            src={search_icon}
+                            alt='search'
+                            className='cursor-pointer w-7'
+                        />
+                    </button>
+                </Link>
+                
                 <button>
                     <img
                         src={bell_icon}
@@ -121,8 +124,8 @@ const Header = () => {
                                         <p className='text-sm'>{user && user.displayName}</p>
                                         <p className='text-sm'>{user && user.email}</p>
                                     </div>
-                                    <hr className='my-2'/>
-                                    <button 
+                                    <hr className='my-2' />
+                                    <button
                                         className='cursor-pointer hover:underline hover:underline-offset-4'
                                         onClick={handleSignout}
                                     >
@@ -133,7 +136,7 @@ const Header = () => {
                         </div>
                     ) : (
                         <Link to='/signin' className='flex items-center'>
-                            <button className='bg-[#191919] px-2 sm:px-4 py-2 whitespace-nowrap rounded text-xs sm:text-lg font-semibold'>
+                            <button className='bg-red-700 px-2 sm:px-4 py-2 whitespace-nowrap rounded text-xs sm:text-lg font-semibold'>
                                 Sign in
                             </button>
                         </Link>

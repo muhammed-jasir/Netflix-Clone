@@ -10,6 +10,7 @@ import PlayerPage from './pages/PlayerPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import ForgotPassword from './components/ForgotPassword'
+import SearchPage from './pages/SearchPage'
 
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                     <Route path='/signin' element={<SigninPage />} />
                     <Route path='/forgot-password' element={<ForgotPassword />} />
                     <Route path='/signup' element={<SignupPage />} />
+                    <Route path='/search' element={<SearchPage />} />
                 </Routes>
             </BrowserRouter>
         </div>

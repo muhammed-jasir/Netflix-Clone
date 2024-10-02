@@ -87,7 +87,7 @@ const Hero = () => {
                 <h1 className='text-5xl font-bold'>
                     {apiData && apiData.media_type === 'movie' ? apiData.title : apiData.name}
                 </h1>
-                <p className='text-lg font-semibold'>
+                <p className='text-lg font-semibold text-ellipsis line-clamp-3'>
                     {apiData && apiData.overview}
                 </p>
                 <div className='flex gap-3'>

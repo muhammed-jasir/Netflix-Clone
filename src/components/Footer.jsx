@@ -40,7 +40,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='flex flex-col gap-4 md:flex-row items-center text-center md:justify-between px-4 py-4'>
-                <p>© {new Date().getFullYear()} Netflix, Inc.</p>
+                <p>&#169; {new Date().getFullYear()} Netflix, Inc.</p>
                 <div className='flex  gap-2.5'>
                     <a href='https://facebook.com' target='_blank'>
                         <img
