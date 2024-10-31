@@ -4,6 +4,7 @@ import MovieCards from '../components/MovieCards';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { trendingMovies, trendingTvShows, popularMovies, upcomingMovies, nowPlayingMovies, topRatedMovies, popularTvShows, upcomingTvShows, nowPlayingTvShows, topRatedTvShows } from '../constants/urls'
+
 const Home = () => {
     return (
         <div className=''>

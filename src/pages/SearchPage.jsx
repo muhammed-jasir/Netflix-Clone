@@ -107,7 +107,7 @@ const SearchPage = () => {
                     }
 
                     {
-                        page < totalPages && (
+                        medias && page < totalPages && (
                             <button
                                 onClick={handleLoadMore}
                                 className={`mt-5 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition flex items-center justify-center ${loadingMore ? 'cursor-not-allowed' : ''}`}

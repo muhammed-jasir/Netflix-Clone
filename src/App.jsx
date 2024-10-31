@@ -11,6 +11,9 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import ForgotPassword from './components/ForgotPassword'
 import SearchPage from './pages/SearchPage'
+import Mylist from './components/Mylist'
+import ProtectedRoute from './components/ProtectedRoute'
+import MyListPage from './pages/MyListPage'
 
 const App = () => {
     return (
@@ -27,6 +30,11 @@ const App = () => {
                     <Route path='/forgot-password' element={<ForgotPassword />} />
                     <Route path='/signup' element={<SignupPage />} />
                     <Route path='/search' element={<SearchPage />} />
+                    <Route path='/mylist' element={
+                        <ProtectedRoute>
+                            <MyListPage />
+                        </ProtectedRoute>
+                    } />
                 </Routes>
             </BrowserRouter>
         </div>

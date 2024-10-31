@@ -18,7 +18,7 @@ const Footer = () => {
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Cookie Preferences</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Legal Notices</li>
                     </ul>
-                    <ul className='flex flex-col gap-2'>
+                    <ul className='hidden md:flex flex-col gap-2'>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Gift Card Terms</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Investor Relations</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Ways to Watch</li>
@@ -31,7 +31,7 @@ const Footer = () => {
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Terms of Use</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Contact Us</li>
                     </ul>
-                    <ul className='flex flex-col gap-2'>
+                    <ul className='hidden md:flex flex-col gap-2'>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Account</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Redeem Gift Cards</li>
                         <li className='hover:underline hover:underline-offset-2 cursor-pointer'>Privacy</li>
